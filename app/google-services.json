@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "571720513272",
+    "firebase_url": "https://parvatihelix.firebaseio.com",
+    "project_id": "parvatihelix",
+    "storage_bucket": "parvatihelix.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571720513272:android:8a0607dfec36b6bb786d0d",
+        "android_client_info": {
+          "package_name": "com.example.parvatihelix"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "571720513272-0e2itkp0tfcoml8fu04gf591mnais8tp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.parvatihelix",
+            "certificate_hash": "da4b194fadcd23c48cba0cefc92995ffb96e8ac5"
+          }
+        },
+        {
+          "client_id": "571720513272-1hp16e5m3bttjj957ee87q7oluqdscnl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxNcpJdC8N7HGXNuc5xmXsOE_vJL77IgI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "571720513272-1hp16e5m3bttjj957ee87q7oluqdscnl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
