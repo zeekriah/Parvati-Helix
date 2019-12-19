@@ -18,8 +18,9 @@
         tools:layout="@layout/fragment_share" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
         android:name="com.example.parvatihelix.ui.Transaction.SlideshowFragment"
+
+        android:id="@+id/nav_slideshow"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
 
@@ -28,6 +29,7 @@
         android:name="com.example.parvatihelix.ui.faq.ToolsFragment"
         android:label="@string/menu_tools"
         tools:layout="@layout/fragment_tools" />
+
 
     <fragment
         android:id="@+id/nav_share"
@@ -40,4 +42,15 @@
         android:name="com.example.parvatihelix.ui.about.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.parvatihelix.ui.logout.logout"
+        android:label="LOgout"
+        tools:layout="@layout/logout_fragment" />
+    <fragment
+        android:id="@+id/nav_cart"
+        android:name="com.example.parvatihelix.ui.cart.cart"
+        android:label="cart"
+        tools:layout="@layout/cart_fragment" />
 </navigation>

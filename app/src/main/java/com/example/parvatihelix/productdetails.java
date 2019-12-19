@@ -1,5 +1,6 @@
 package com.example.parvatihelix;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -27,6 +28,7 @@ ImageView pimage;
 Button cart,buy;
 DocumentReference df;
 FirebaseFirestore db;
+EditText qty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +41,8 @@ FirebaseFirestore db;
         cart=findViewById(R.id.addtocart);
 
         db=FirebaseFirestore.getInstance();
-
+        qty=findViewById(R.id.qty);
+        qty.setText("1");
         pname.setText(productname);
         Picasso.with(productdetails.this).load(productimage).into(pimage);
 
@@ -47,29 +50,34 @@ FirebaseFirestore db;
         cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(productdetails.this, Cart.class);
+//                Intent intent = new Intent(productdetails.this, Cart.class);
+//
+//
+//                startActivity(intent);
+                if(qty.getText().toString().trim()=="0" || qty.getText().equals("")){
+                    Toast.makeText(productdetails.this,"Not a Valid Quantity",Toast.LENGTH_LONG).show();
+                    return;
 
 
-                startActivity(intent);
-//                FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
-//
-//                Toast.makeText(productdetails.this,user.getPhoneNumber(),Toast.LENGTH_LONG).show();
-//                df=db.collection("users").document(user.getPhoneNumber()).collection("carts").document(productname);
-//                EditText qty=findViewById(R.id.qty);
-//                String quant=qty.getText().toString().trim();
-//                Map usercart=new HashMap();
-//                usercart.put("PName",productname);
-//                usercart.put("PImage",productimage);
-//                usercart.put("Quantity",quant);
-//
-//                df.set(usercart).addOnSuccessListener(new OnSuccessListener<Void>() {
-//                    @Override
-//                    public void onSuccess(Void aVoid) {
-//                        Toast.makeText(productdetails.this, "Added To Cart",Toast.LENGTH_LONG).show();
-//
-//
-//                    }
-//                });
+                }
+                FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+
+                Toast.makeText(productdetails.this,user.getPhoneNumber(),Toast.LENGTH_LONG).show();
+                df=db.collection("users").document(user.getPhoneNumber()).collection("carts").document(productname);
+                String quant=qty.getText().toString().trim();
+                Map usercart=new HashMap();
+                usercart.put("PName",productname);
+                usercart.put("PImage",productimage);
+                usercart.put("Quantity",quant);
+
+                df.set(usercart).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Toast.makeText(productdetails.this, "Added To Cart",Toast.LENGTH_LONG).show();
+
+
+                    }
+                });
 
 
             }

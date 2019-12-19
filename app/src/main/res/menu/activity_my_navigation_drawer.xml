@@ -17,11 +17,15 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/transaction"
             android:title="Transaction"/>
+        <item
+            android:id="@+id/nav_cart"
+            android:icon="@drawable/transaction"
+            android:title="Cart"/>
 
         <item
             android:id="@+id/nav_share"
             android:icon="@drawable/developer"
-            android:title="Developer" />
+            android:title="developer" />
 
 
       <menu>
@@ -33,7 +37,8 @@
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/logout"
-            android:title="Logout" />
+            android:title="Logout"
+            />
 
       </menu>
     </group>

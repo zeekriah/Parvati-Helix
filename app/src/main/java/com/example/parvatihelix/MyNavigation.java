@@ -3,11 +3,14 @@ package com.example.parvatihelix;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
 import android.view.View;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -44,6 +47,9 @@ public class MyNavigation extends AppCompatActivity {
     FirebaseStorage fs;
     boolean userfound=false;
     FirebaseUser user;
+    String UserName;
+    TextView mNameTextView;
+
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
@@ -53,14 +59,13 @@ public class MyNavigation extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,
-                R.id.nav_tools, R.id.nav_share, R.id.nav_send)
+                R.id.nav_tools, R.id.nav_share, R.id.nav_send,R.id.nav_logout)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -68,6 +73,40 @@ public class MyNavigation extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
+        user=FirebaseAuth.getInstance().getCurrentUser();
+        db=FirebaseFirestore.getInstance();
+        View header = navigationView.getHeaderView(0);
+
+
+        mNameTextView = header.findViewById(R.id.name);
+
+
+        df=db.collection("users").document(user.getPhoneNumber());
+        df.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                if (task.isSuccessful()) {
+                    DocumentSnapshot document = task.getResult();
+                    if (document != null) {
+                        UserName=document.getString("Name");
+                        mNameTextView.setText(UserName);
+
+                    } else {
+//                        Log.d("LOGGER", "No such document");
+                    }
+                } else {
+//                    Log.d("LOGGER", "get failed with ", task.getException());
+                }
+            }
+        });
+
+
+        TextView EmailTextView = header.findViewById(R.id.mobtextView);
+        EmailTextView.setText(user.getPhoneNumber());
+
+
+//        TextView te=(TextView)findViewById(R.id.name);
+//        te.setText("fszcgvbvbjfhc");
        //from here
         db= FirebaseFirestore.getInstance();
         fs= FirebaseStorage.getInstance();
@@ -93,11 +132,11 @@ public class MyNavigation extends AppCompatActivity {
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
                 int i = 1;
                 for (DocumentSnapshot ds : queryDocumentSnapshots) {
-                    Toast.makeText(MyNavigation.this, "b"+ds.getId(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(MyNavigation.this, "bbbb"+ds.getId(),Toast.LENGTH_LONG).show();
 
                     if(user.getPhoneNumber().equalsIgnoreCase(ds.getId())){
 
-                        Toast.makeText(MyNavigation.this, "done",Toast.LENGTH_LONG).show();
+                        Toast.makeText(MyNavigation.this, "doneee",Toast.LENGTH_LONG).show();
 //                        Toast.makeText(MainPage.this, "b"+ds.getId(),Toast.LENGTH_LONG).show();
                         userfound=true;
                         return;
@@ -123,7 +162,7 @@ public class MyNavigation extends AppCompatActivity {
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
                 int i=1;
                 for(DocumentSnapshot ds: queryDocumentSnapshots){
-//                    Toast.makeText(MainPage.this, ds.toString(),Toast.LENGTH_LONG).show();
+                    Toast.makeText(MyNavigation.this, "aaaaaaaaa",Toast.LENGTH_LONG).show();
                     final String CategoryName=ds.getId();
 //                    if (ds.getId().equalsIgnoreCase("Hackshaw")) {
                     String s="R.id.img"+i;

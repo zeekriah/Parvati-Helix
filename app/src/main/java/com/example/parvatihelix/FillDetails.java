@@ -31,7 +31,7 @@ EditText nameField,emailField,locationField;
         setContentView(R.layout.activity_fill_details);
         db=FirebaseFirestore.getInstance();
         Mob = getIntent().getExtras().getString("mobile");
-        df=db.collection("users").document("amzksxzk");
+        df=db.collection("users").document(Mob);
     nameField=findViewById(R.id.fullName);
         emailField=findViewById(R.id.userEmailId);
 
@@ -43,7 +43,7 @@ EditText nameField,emailField,locationField;
             public void onClick(View v) {
                 progressDialog=new ProgressDialog(FillDetails.this);
                 progressDialog.setTitle("Please wait");
-                progressDialog.setMessage("Registring You...");
+                progressDialog.setMessage("Registering You...");
                 progressDialog.show();
 
                 Map user=new HashMap();

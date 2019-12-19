@@ -65,13 +65,14 @@ String number;
         if(user!=null){
 //            user = FirebaseAuth.getInstance().getCurrentUser();
 //        Toast.makeText(MainPage.this, "a"+user.getPhoneNumber(),Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "bbbbbbb",Toast.LENGTH_LONG).show();
 
             db.collection("users").addSnapshotListener(new EventListener<QuerySnapshot>() {
                 @Override
                 public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
                     int i = 1;
                     for (DocumentSnapshot ds : queryDocumentSnapshots) {
-                        Toast.makeText(MainActivity.this, "b"+ds.getId(),Toast.LENGTH_LONG).show();
+                        Toast.makeText(MainActivity.this, "bbbbbbb",Toast.LENGTH_LONG).show();
 
                         if(user.getPhoneNumber().equalsIgnoreCase(ds.getId())){
 

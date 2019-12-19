@@ -46,6 +46,8 @@ public class Items extends AppCompatActivity {
     int imgcount;
     public Vector itemimage;
     public static Vector itemsName;
+    ItemsListAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +56,8 @@ public class Items extends AppCompatActivity {
         fs=FirebaseStorage.getInstance();
         itemimage=new Vector();
         itemsName=new Vector();
+        lv=(ListView)findViewById(R.id.list);
+
 
         imgcount=0;
 
@@ -64,8 +68,9 @@ public class Items extends AppCompatActivity {
 //                            Toast.makeText(Items.this, Category,Toast.LENGTH_LONG).show();
 //        adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, list);
 //
+        String catname=getIntent().getExtras().getString("Category");
         /** Defining a click event listener for the button "Add" */
-        db.collection("Categories").document("Hackshaw").collection("SubCategories").addSnapshotListener(new EventListener<QuerySnapshot>() {
+        db.collection("Categories").document(catname).collection("SubCategories").addSnapshotListener(new EventListener<QuerySnapshot>() {
                                     @Override
                                     public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
                                         String img="";
@@ -92,17 +97,17 @@ public class Items extends AppCompatActivity {
 //                                        Toast.makeText(Items.this, img, Toast.LENGTH_LONG).show();
 //                                        Toast.makeText(Items.this, name, Toast.LENGTH_LONG).show();
 
+                                        //It will send name and images of items to adapter
+                                        adapter=new ItemsListAdapter(Items.this,itemsName,itemimage);
+                                        lv.setAdapter(adapter);
 
+
+
+                                        //end
 
                                     }
                                 });
-        //It will send name and images of items to adapter
-        ItemsListAdapter adapter=new ItemsListAdapter(this,itemsName,itemimage);
-        lv=(ListView)findViewById(R.id.list);
-        lv.setAdapter(adapter);
 
-
-        //end
 
 
         //access the data from list
