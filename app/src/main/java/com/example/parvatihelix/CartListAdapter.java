@@ -30,14 +30,21 @@ public class CartListAdapter extends ArrayAdapter<String> {
     private final Activity context;
     private final Vector itemsName;
     private final Vector itemsImg;
+    private final Vector itemsPrice;
+    private final Vector itemsQuant;
+
+
     FirebaseFirestore db;
     FirebaseUser user;
 
-    public CartListAdapter(Activity context, Vector itemsName, Vector itemsImg) {
+    public CartListAdapter(Activity context, Vector itemsName, Vector itemsImg, Vector itemsPrice,Vector itemsQuant) {
         super(context,R.layout.activity_cart_structure,itemsName);
         this.context = context;
         this.itemsName = itemsName;
         this.itemsImg = itemsImg;
+        this.itemsPrice=itemsPrice;
+        this.itemsQuant=itemsQuant;
+
     }
 
     @NonNull
@@ -48,6 +55,9 @@ public class CartListAdapter extends ArrayAdapter<String> {
         TextView text=(TextView)rowView.findViewById(R.id.cartitemname);
         ImageView img=(ImageView)rowView.findViewById(R.id.cartitemimg);
         AutoCompleteTextView qty=rowView.findViewById(R.id.select);
+        TextView price=rowView.findViewById(R.id.cartprice);
+
+
         db= FirebaseFirestore.getInstance();
 
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -55,6 +65,8 @@ public class CartListAdapter extends ArrayAdapter<String> {
 
         text.setText(itemsName.get(position).toString());
 //        img.setImageResource(itemsImg[position]);
+        qty.setText(itemsQuant.get(position).toString());
+        price.setText(itemsPrice.get(position).toString());
         Picasso.with(context).load(itemsImg.get(position).toString()).into(img);
 
         Button deleteImageView = (Button) rowView.findViewById(R.id.delete);

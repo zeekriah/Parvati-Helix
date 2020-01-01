@@ -28,25 +28,15 @@ public class SlideshowFragment extends Fragment {
                 ViewModelProviders.of(this).get(SlideshowViewModel.class);
         View root = inflater.inflate(R.layout.activity_transaction, container, false);
         final TextView textView = root.findViewById(R.id.transaction);
-        final Button b1 = root.findViewById(R.id.trans);
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                b1.setText("sssssssssssss");
-                Toast.makeText(getActivity(), "bbbb",Toast.LENGTH_LONG).show();
 
-            }
-        });
+
         slideshowViewModel.getText().observe(this, new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
             }
         });
-        Intent intent = new Intent(getActivity(), Cart.class);
-//
-//
-                startActivity(intent);
+
 
         return root;
     }

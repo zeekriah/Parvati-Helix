@@ -46,6 +46,8 @@ public class Items extends AppCompatActivity {
     int imgcount;
     public Vector itemimage;
     public static Vector itemsName;
+    public static Vector itemprice;
+
     ItemsListAdapter adapter;
 
     @Override
@@ -56,6 +58,7 @@ public class Items extends AppCompatActivity {
         fs=FirebaseStorage.getInstance();
         itemimage=new Vector();
         itemsName=new Vector();
+        itemprice=new Vector();
         lv=(ListView)findViewById(R.id.list);
 
 
@@ -86,8 +89,12 @@ public class Items extends AppCompatActivity {
 //                                                Toast.makeText(Items.this, docs.getData().toString(), Toast.LENGTH_LONG).show();
                                                 Map m = docs.getData();
                                                 String v = m.get("image").toString();
-                                                itemimage.add(v);
+                                            int price=Integer.parseInt(m.get("Price").toString());
+                                            itemprice.add(price);
+
+                                            itemimage.add(v);
                                                 itemsName.add(docs.getId());
+
                                                 imgcount=imgcount+1;
                                                 img=img+" "+v;
                                                 name=name+"  "+docs.getId();
@@ -98,7 +105,7 @@ public class Items extends AppCompatActivity {
 //                                        Toast.makeText(Items.this, name, Toast.LENGTH_LONG).show();
 
                                         //It will send name and images of items to adapter
-                                        adapter=new ItemsListAdapter(Items.this,itemsName,itemimage);
+                                        adapter=new ItemsListAdapter(Items.this,itemsName,itemimage,itemprice);
                                         lv.setAdapter(adapter);
 
 

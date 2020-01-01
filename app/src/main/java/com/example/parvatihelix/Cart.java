@@ -36,7 +36,8 @@ int imgcount=0;
     String name="";
 
 public  static Vector cartItemsName;
-
+    public static  Vector itemquantity;
+    public static Vector itemprice;
   public static Vector itemimage;
   public static Vector itemsName;
         public static Vector cartItemsImg;
@@ -50,6 +51,9 @@ public  static Vector cartItemsName;
         itemsName=new Vector();
         cartItemsName=new Vector();
         cartItemsImg=new Vector();
+        itemprice=new Vector();
+        itemquantity=new Vector();
+
         user= FirebaseAuth.getInstance().getCurrentUser();
 
         imgcount=0;
@@ -78,8 +82,14 @@ public  static Vector cartItemsName;
 //                                                Toast.makeText(Items.this, docs.getData().toString(), Toast.LENGTH_LONG).show();
                     Map m = docs.getData();
                     String v = m.get("image").toString();
+                    int price=Integer.parseInt(m.get("Price").toString());
+                    int quant=Integer.parseInt(m.get("Quantity").toString());
+
                     itemimage.add(v);
                     itemsName.add(docs.getId());
+                    itemprice.add(price);
+                    itemquantity.add(quant);
+
                     imgcount=imgcount+1;
                     img=img+" "+v;
                     name=name+"  "+docs.getId();
@@ -91,7 +101,7 @@ public  static Vector cartItemsName;
 
 //                                        Toast.makeText(Items.this, img, Toast.LENGTH_LONG).show();
 //                Toast.makeText(Cart.this, itemimage.get(0).toString(), Toast.LENGTH_LONG).show();
-                CartListAdapter adapter=new CartListAdapter(Cart.this,itemsName,itemimage);
+                CartListAdapter adapter=new CartListAdapter(Cart.this,itemsName,itemimage,itemprice,itemquantity);
                 lv=(ListView)findViewById(R.id.cartlist);
                 lv.setAdapter(adapter);
 

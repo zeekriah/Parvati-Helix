@@ -69,6 +69,7 @@ EditText qty;
                 usercart.put("PName",productname);
                 usercart.put("PImage",productimage);
                 usercart.put("Quantity",quant);
+                usercart.put("Price",199);
 
                 df.set(usercart).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

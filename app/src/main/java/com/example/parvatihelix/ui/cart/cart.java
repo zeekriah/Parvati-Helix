@@ -43,6 +43,8 @@ public class cart extends Fragment {
     public  static Vector cartItemsName;
 
     public static Vector itemimage;
+    public static  Vector itemquantity;
+    public static Vector itemprice;
     public static Vector itemsName;
     public static Vector cartItemsImg;
     private LogoutViewModel mViewModel;
@@ -65,6 +67,9 @@ View root;
                 fs= FirebaseStorage.getInstance();
                 itemimage=new Vector();
                 itemsName=new Vector();
+                itemprice=new Vector();
+                itemquantity=new Vector();
+
                 cartItemsName=new Vector();
                 cartItemsImg=new Vector();
                 user= FirebaseAuth.getInstance().getCurrentUser();
@@ -94,11 +99,22 @@ View root;
 //                                            if(docs.getId()=="Hackshaw") {
 //                                                Toast.makeText(Items.this, docs.getData().toString(), Toast.LENGTH_LONG).show();
                             Map m = docs.getData();
-                            String v = m.get("PImage").toString();
-                            itemimage.add(v);
+                            String imglink = m.get("PImage").toString();
+                            String price="";
+                            if(m.get("Price")!=null) {
+                                price=m.get("Price").toString();
+                            }
+
+                            String quant=m.get("Quantity").toString();
+
+                            itemimage.add(imglink);
                             itemsName.add(docs.getId());
+                            itemprice.add(price);
+                            itemquantity.add(quant);
+
+
                             imgcount=imgcount+1;
-                            img=img+" "+v;
+                            img=img+" "+imglink;
                             name=name+"  "+docs.getId();
 
 
@@ -108,7 +124,7 @@ View root;
 
 //                                        Toast.makeText(Items.this, img, Toast.LENGTH_LONG).show();
 //                Toast.makeText(Cart.this, itemimage.get(0).toString(), Toast.LENGTH_LONG).show();
-                        CartListAdapter adapter=new CartListAdapter(getActivity(),itemsName,itemimage);
+                        CartListAdapter adapter=new CartListAdapter(getActivity(),itemsName,itemimage,itemprice,itemquantity);
                         lv=root.findViewById(R.id.cartlist);
                         lv.setAdapter(adapter);
 
