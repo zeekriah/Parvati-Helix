@@ -6,23 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".TransactionActivity">
 
-    <TextView
-        android:id="@+id/transaction"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=" Transaction Fragment "
-        android:textSize="25sp"
-        android:gravity="center"
-        android:textColor="#000"
-        android:layout_centerVertical="true"
-        />
-    <Button
-        android:id="@+id/trans"
+    <ListView
+        android:id="@+id/transactionlist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Transaction"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="200dp"/>
+        android:cacheColorHint="#2B3263"
+        android:dividerHeight="10dp" />
 
 
 

@@ -176,6 +176,9 @@ public class Login extends AppCompatActivity {
                                 }
                             } else {
                                 Toast.makeText(Login.this, "Invalid OTP", Toast.LENGTH_LONG).show();
+                                if(progressDialog.isShowing()){
+                                    progressDialog.dismiss();
+                                }
                             }
                         }
 

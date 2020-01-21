@@ -60,9 +60,7 @@ View root;
                 ViewModelProviders.of(this).get(LogoutViewModel.class);
         root = inflater.inflate(R.layout.cart_fragment, container, false);
 //        final TextView textView = root.findViewById(R.id.it);
-        mViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
+
                 db= FirebaseFirestore.getInstance();
                 fs= FirebaseStorage.getInstance();
                 itemimage=new Vector();
@@ -145,7 +143,7 @@ View root;
 //
 //                textView.setText(s);
 
-            }
+
 
 //    @Override
 //    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -154,7 +152,7 @@ View root;
 //        // TODO: Use the ViewModel
 //    }
 
-        });
+
         return root;
     }
 }

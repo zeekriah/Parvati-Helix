@@ -125,11 +125,13 @@ public class Items extends AppCompatActivity {
                 Intent intent = new Intent(Items.this, productdetails.class);
                 String pname =itemsName.get(position).toString();
                 String pimage =itemimage.get(position).toString();
+                String pprice=itemprice.get(position).toString();
 
                 Toast.makeText(Items.this, pname, Toast.LENGTH_LONG).show();
 
                 intent.putExtra("productname", pname);
                 intent.putExtra("productimage", pimage);
+                intent.putExtra("productprice",pprice);
 
                 startActivity(intent);
             }

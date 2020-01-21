@@ -13,28 +13,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".ShippingAddress"></activity>
+        <activity android:name=".TransactionStructure" />
+        <activity android:name=".HomeActivity" />
         <activity
             android:name=".MyNavigation"
             android:label="@string/title_activity_my_navigation"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AboutActivity" />
         <activity android:name=".TransactionActivity" />
         <activity android:name=".Items" />
-        <activity android:name=".FillDetails">
-
-        </activity>
+        <activity android:name=".FillDetails" />
         <activity android:name=".productdetails" />
         <activity android:name=".Cart" />
-
-
         <activity android:name=".Login" />
-        <activity android:name=".MainPage" >
-
-
-        </activity>
+        <activity android:name=".MainPage" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -42,7 +35,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="rzp_test_mvbTi0AATwkQRv" />
+    </application>
 
 </manifest>

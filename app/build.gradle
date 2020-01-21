@@ -20,7 +20,9 @@ android {
         }
     }
 }
-
+repositories {
+    mavenCentral()
+}
 dependencies {
     def nav_version = "2.1.0"
 
@@ -80,6 +82,9 @@ dependencies {
 //    implementation 'com.android.support:multidex:1.0.3'
     implementation 'androidx.navigation:navigation-ui:2.1.0'
     implementation 'com.firebaseui:firebase-ui-auth:6.0.2'
+
+    implementation 'com.razorpay:checkout:1.5.12'
+
 }
 apply plugin: "androidx.navigation.safeargs"
 

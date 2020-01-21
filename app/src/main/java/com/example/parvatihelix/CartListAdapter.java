@@ -66,7 +66,7 @@ public class CartListAdapter extends ArrayAdapter<String> {
         text.setText(itemsName.get(position).toString());
 //        img.setImageResource(itemsImg[position]);
         qty.setText(itemsQuant.get(position).toString());
-        price.setText(itemsPrice.get(position).toString());
+        price.setText(Integer.toString(Integer.parseInt(itemsPrice.get(position).toString())*Integer.parseInt(itemsQuant.get(position).toString())));
         Picasso.with(context).load(itemsImg.get(position).toString()).into(img);
 
         Button deleteImageView = (Button) rowView.findViewById(R.id.delete);
