@@ -23,13 +23,7 @@ public class SendFragment extends Fragment {
         sendViewModel =
                 ViewModelProviders.of(this).get(SendViewModel.class);
         View root = inflater.inflate(R.layout.activity_about, container, false);
-        final TextView textView = root.findViewById(R.id.about);
-        sendViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }

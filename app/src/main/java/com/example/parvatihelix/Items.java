@@ -60,6 +60,7 @@ public class Items extends AppCompatActivity {
         itemsName=new Vector();
         itemprice=new Vector();
         lv=(ListView)findViewById(R.id.list);
+        this.setTitle("Products");
 
 
         imgcount=0;

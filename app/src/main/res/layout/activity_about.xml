@@ -4,16 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutActivity">
-
-
-    <TextView
-        android:id="@+id/about"
+    android:id="@+id/about">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="02dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="50dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Parvati Helix"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:textSize="20dp"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="about fragment"
-        android:textSize="25sp"
-        android:textColor="#000"
-        android:gravity="center"
-        android:layout_centerVertical="true"/>
+        android:layout_marginTop="56dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="50dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Established in 1975, paravati helix Grinding (well-knows as vijay tool works)work has
+made a name for itself in the list of top service providers of in India."
+            android:textAlignment="center"
+            android:padding="15dp"
+            android:textSize="15dp"
+            />
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="149dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="50dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Parvati Helix is involved in producing a range of metal cutting tools, carbide cutting tools,
+industrial metal cutting tools, solid carbide cutting tools, ball nose ,end mill cutter,
+drill-reamers-step drills-step reamers-central drills and others."
+            android:textAlignment="center"
+            android:padding="15dp"
+            android:textSize="16dp"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="285dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="50dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="
+With a remarkable experience, we also provide services for resharping and replacing in our
+domain. As per the specific demands of our customers, we offer tailor-made solutions for our
+range.
+"
+            android:textAlignment="center"
+            android:padding="10dp"
+            android:textSize="15dp"/>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="385dp"
+        app:cardCornerRadius="30dp"
+        app:cardElevation="50dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="- We are manufacturing and exporting all types of centreless grinding machine job work at a
+very low and affordable price.
+- our main aim to give best finish quality.
+- TO fully satisfy buyer by giving them best quality machined product."
+            android:textAlignment="center"
+            android:padding="15dp"
+            android:textSize="15dp"/>
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>

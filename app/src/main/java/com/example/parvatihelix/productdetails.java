@@ -91,13 +91,16 @@ String productname,productprice,productimage,quant;
                 if (qty.getText().toString().matches("")||qty.getText().toString()=="0"){
                     pprice.setText("0");
 
+                }else{
+                if(Integer.parseInt(qty.getText().toString()) >15){
+                    Toast.makeText(getApplicationContext(),"Quantity cannot be more then 15",Toast.LENGTH_LONG).show();
                 }
                 else {
                     int newprice=(Integer.parseInt(qty.getText().toString())*Integer.parseInt(productprice));
 
                     pprice.setText(Integer.toString(newprice));
                     price_acc_to_qty = Integer.toString(newprice);
-                }
+                }}
 
 
             }

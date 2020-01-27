@@ -23,10 +23,10 @@
         <activity android:name=".AboutActivity" />
         <activity android:name=".TransactionActivity" />
         <activity android:name=".Items" />
-        <activity android:name=".FillDetails" />
+        <activity android:name=".FillDetails" >  </activity>
         <activity android:name=".productdetails" />
         <activity android:name=".Cart" />
-        <activity android:name=".Login" />
+        <activity android:name=".Login" > </activity>
         <activity android:name=".MainPage" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -34,6 +34,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
         <meta-data

@@ -4,32 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
-
+    android:background="@drawable/log"
     tools:context=".Login">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="298dp">
+
         <ImageView
             android:layout_width="110dp"
             android:layout_height="110dp"
-            android:src="@drawable/ic_stay_primary_portrait_black_24dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="112dp"
-            android:background="@color/black"
-            />
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="65dp"
+            android:elevation="30dp"
+            android:src="@drawable/ic_stay_primary_portrait_black_24dp" />
 
         <ImageView
             android:layout_width="80dp"
             android:layout_height="60dp"
-            android:src="@drawable/ic_textsms_black_24dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="199dp"
-            android:background="@color/black"
-            />
+            android:layout_marginLeft="194dp"
+            android:layout_marginTop="65dp"
+            android:elevation="30dp"
+            android:src="@drawable/ic_textsms_black_24dp" />
 
 
         <LinearLayout
@@ -37,14 +37,14 @@
             android:layout_height="230dp"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="-1dp">
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="14dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="78dp"
-                android:layout_marginTop="170dp"
+                android:layout_marginTop="180dp"
                 android:padding="4dp"
                 android:text="+91"
                 android:textColor="@color/white"
@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="1dp"
-                android:layout_marginTop="170dp"
+                android:layout_marginTop="180dp"
                 android:text="-"
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -66,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="170dp"
+                android:layout_marginTop="180dp"
                 android:text=""
                 android:textColor="@color/white"
                 android:textSize="20sp"
@@ -86,47 +86,60 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="50dp"
-            android:layout_marginTop="267dp"
-            android:text="Enter OTP"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="277dp"
+            android:layout_marginBottom="283dp"
+            android:text="OTP"
             android:textColor="@color/white"
             android:textSize="23sp"
             android:textStyle="bold" />
 
         <EditText
             android:id="@+id/GetOtp"
-            android:layout_width="180dp"
+            android:layout_width="160dp"
             android:layout_height="40dp"
-            android:layout_marginLeft="170dp"
-            android:layout_marginTop="262dp"
-            android:background="@drawable/roundbutton"
-            android:maxLength="6"
-
-            />
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="73dp"
+            android:layout_marginTop="272dp"
+            android:layout_marginBottom="278dp"
+            android:background="@drawable/roundbutton2"
+            android:backgroundTint="@color/white"
+            android:elevation="50dp"
+            android:maxLength="6" />
 
         <Button
             android:id="@+id/Submit"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="500dp"
-            android:layout_marginLeft="60dp"
+            android:layout_width="345dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="08dp"
+            android:layout_marginBottom="85dp"
+            android:background="@drawable/submitbutton"
+            android:elevation="50dp"
+            android:padding="3dp"
             android:text="Submit"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:background="@drawable/roundbutton2"
-            android:textSize="20sp"
-            />
+            android:textColor="#FFFF"
+            android:textSize="17sp"
+            android:textStyle="bold" />
 
         <Button
             android:id="@+id/resendOTP"
-            android:layout_width="120dp"
-            android:layout_height="50dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="350dp"
-            android:background="@drawable/roundbutton"
-            android:text="Resend OTP" />
+            android:layout_width="118dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="235dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="278dp"
+            android:layout_toEndOf="@+id/GetOtp"
+            android:background="@drawable/roundbutton2"
+            android:elevation="50dp"
+            android:text="Resend OTP"
+            android:textColor="@color/Gray"
+            android:textStyle="bold" />
     </RelativeLayout>
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

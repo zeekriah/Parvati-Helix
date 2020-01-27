@@ -6,6 +6,9 @@
     android:layout_height="match_parent"
     tools:context=".CartStructure">
 
+
+
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -75,8 +78,9 @@
                 android:id="@+id/select"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:text="select quantity"
-                />
+                android:duplicateParentState="false"
+                android:editable="false"
+                android:text="select quantity" />
             <Button
                 android:id="@+id/max"
                 android:layout_width="40dp"
@@ -105,6 +109,7 @@
 
         </LinearLayout>
     </GridLayout>
+
 
 
 </LinearLayout>

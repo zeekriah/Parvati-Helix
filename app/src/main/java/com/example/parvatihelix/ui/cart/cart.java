@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.parvatihelix.Cart;
 import com.example.parvatihelix.CartListAdapter;
@@ -97,7 +98,9 @@ View root;
 //                                            if(docs.getId()=="Hackshaw") {
 //                                                Toast.makeText(Items.this, docs.getData().toString(), Toast.LENGTH_LONG).show();
                             Map m = docs.getData();
+
                             String imglink = m.get("PImage").toString();
+
                             String price="";
                             if(m.get("Price")!=null) {
                                 price=m.get("Price").toString();
@@ -120,7 +123,7 @@ View root;
 
                         }
 
-//                                        Toast.makeText(Items.this, img, Toast.LENGTH_LONG).show();
+//                                        Toast.makeText(getActivity(), img, Toast.LENGTH_LONG).show();
 //                Toast.makeText(Cart.this, itemimage.get(0).toString(), Toast.LENGTH_LONG).show();
                         CartListAdapter adapter=new CartListAdapter(getActivity(),itemsName,itemimage,itemprice,itemquantity);
                         lv=root.findViewById(R.id.cartlist);

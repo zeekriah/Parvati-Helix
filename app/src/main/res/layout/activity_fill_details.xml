@@ -3,14 +3,16 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
+
     android:padding="20dp"
-    android:background="#000000">
-<!--    009688-->
+    android:background="@drawable/log">
+
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="10dp"
+        android:textSize="20dp"
         android:text="SignUp"
         android:textColor="#EEEE"
         android:textStyle="bold" />
@@ -84,10 +86,6 @@
         android:layout_height="1px"
         android:background="#EEEE" />
 
-
-
-
-
     <CheckBox
         android:id="@+id/terms_conditions"
         android:layout_width="wrap_content"
@@ -103,13 +101,12 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:background="#9E9E9E"
+        android:background="@drawable/submitbutton"
         android:padding="3dp"
         android:text="Submit"
         android:textColor="#FFFF"
         android:textSize="17sp"
         android:textStyle="bold"
-
-
+        android:elevation="50dp"
         />
 </LinearLayout>

@@ -33,7 +33,7 @@ public class CartListAdapter extends ArrayAdapter<String> {
     private final Vector itemsPrice;
     private final Vector itemsQuant;
 
-
+    AutoCompleteTextView qty;
     FirebaseFirestore db;
     FirebaseUser user;
 
@@ -54,7 +54,7 @@ public class CartListAdapter extends ArrayAdapter<String> {
         View rowView=inflater.inflate(R.layout.activity_cart_structure,null,true);
         TextView text=(TextView)rowView.findViewById(R.id.cartitemname);
         ImageView img=(ImageView)rowView.findViewById(R.id.cartitemimg);
-        AutoCompleteTextView qty=rowView.findViewById(R.id.select);
+        qty=rowView.findViewById(R.id.select);
         TextView price=rowView.findViewById(R.id.cartprice);
 
 
@@ -78,6 +78,14 @@ public class CartListAdapter extends ArrayAdapter<String> {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
                 context.startActivity(intent);
+            }
+        });
+
+        Button min=rowView.findViewById(R.id.min);
+        min.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                qty.setText("iwhxzj");
             }
         });
         return rowView;

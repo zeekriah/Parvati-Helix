@@ -41,6 +41,7 @@ public class Login extends AppCompatActivity {
         Mob = getIntent().getExtras().getString("mobile");
         verificationId = getIntent().getExtras().getString("OTP");
         //end temp
+
         mobile=(TextView)findViewById(R.id.place);
         mobile.setText(Mob);
         resendOtp();

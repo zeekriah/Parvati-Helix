@@ -1,66 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".productdetails">
 
-    <ImageView
-        android:id="@+id/productimage"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="20dp" />
+    <androidx.cardview.widget.CardView
+        android:layout_width="330dp"
+        android:layout_height="378dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="30dp">
 
-    <TextView
-        android:id="@+id/productname"
-        android:layout_width="66dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/productimage"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:textColor="@color/black" />
+        <ImageView
+            android:id="@+id/productimage"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="25dp"
+            android:elevation="10dp"
+            />
 
+        <TextView
+            android:id="@+id/productname"
+            android:layout_width="61dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productimage"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="239dp"
+            android:textColor="@color/black" />
 
-    <TextView
-        android:id="@+id/productprice"
-        android:layout_width="103dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/productimage"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="64dp"
-        android:textColor="@color/black" />
+        <TextView
+            android:id="@+id/productprice"
+            android:layout_width="82dp"
+            android:layout_height="wrap_content"
 
-    <EditText
-        android:id="@+id/qty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/productname"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="58dp"
-        android:hint="Quantity"
-        android:textColor="@color/black" />
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="239dp"
+            android:textColor="@color/black" />
 
-    <Button
-        android:id="@+id/addtocart"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/productname"
-        android:layout_marginLeft="120dp"
-        android:layout_marginTop="57dp"
-        android:text="Add to Cart"
-        android:textColor="@color/black" />
-
-    <Button
-        android:id="@+id/buy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/addtocart"
-        android:layout_marginLeft="250dp"
-        android:layout_marginBottom="-2dp"
-
-        android:text="BUY"
-        android:textColor="@color/black" />
+        <EditText
+            android:id="@+id/qty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/productname"
+            android:layout_marginLeft="128dp"
+            android:layout_marginTop="270dp"
+            android:textColor="@color/black"
+            android:hint="Quantity"
+            />
 
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/addtocart"
+            android:layout_width="170dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/productname"
+            android:layout_marginLeft="-03dp"
+            android:layout_marginTop="320.5dp"
+            android:text="Add to Cart"
+            android:background="@color/white"
+            android:textColor="@color/black"
+            />
+
+        <Button
+            android:id="@+id/buy"
+            android:layout_width="171.5dp"
+            android:layout_height="60dp"
+            android:layout_alignBottom="@id/addtocart"
+            android:layout_marginLeft="160dp"
+            android:layout_marginTop="320.5dp"
+            android:text="BUY"
+            android:background="@color/LightGrey"
+            android:textColor="@color/black" />
+    </androidx.cardview.widget.CardView>
+
+</androidx.cardview.widget.CardView>
